@@ -17,7 +17,7 @@ The MineShop application allows you to "purchase" items with the coins you've ea
 - <code>/mineshop claimrewards</code> - Opens a GUI where you can claim the rewards bought from the MineShop application. Available aliases - <code>[cr, rewards]</code>
 - <code>/mineshop help</code> - The help command. Available aliases - <code>[hp, help, hl]</code>
 
-- Bounty System - Still being worked on.
+- Bounty System - Still being implemented.
 
 - Buy menu - Buy items with earned coins in the MineShop app!
 
