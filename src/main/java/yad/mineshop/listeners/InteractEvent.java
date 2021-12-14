@@ -6,6 +6,7 @@ import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityInteractEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
@@ -24,6 +25,7 @@ public class InteractEvent implements Listener {
             if(!(player.getInventory().getItemInMainHand().hasItemMeta())) return;
             if(Objects.requireNonNull(player.getInventory().getItemInMainHand().lore()).isEmpty()) return;
             if(!player.getInventory().getItemInMainHand().getItemMeta().getDisplayName().contains("Kill")) return;
+            if(!(e.getAction().equals(Action.RIGHT_CLICK_AIR))) return;
 
             String playerName = player.getInventory().getItemInMainHand().getItemMeta().getDisplayName();
             playerName = playerName.replaceAll("Kill ", "");
