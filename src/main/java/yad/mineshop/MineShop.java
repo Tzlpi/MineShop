@@ -32,10 +32,11 @@ public final class MineShop extends JavaPlugin {
 
     private Runnable runnable;
     private QuestManager questManager = new QuestManager(this);
+    private static MineShop plugin;
 
     @Override
     public void onEnable() {
-
+        plugin = this;
         saveDefaultConfig(); // config
 
             //listeners
@@ -73,7 +74,7 @@ public final class MineShop extends JavaPlugin {
         this.getServer().getPluginManager().registerEvents(new QuestGUIClickEvent(questManager), this);
         this.getServer().getPluginManager().registerEvents(new ProgressGUIClickEvent(),this);
         this.getServer().getPluginManager().registerEvents(new RewardsGUIClickEvent(this, new RewardGUI(this)), this);
-        this.getServer().getPluginManager().registerEvents(new InteractEvent(), this);
+        this.getServer().getPluginManager().registerEvents(new InteractEvent(this), this);
     }
 
     public String getIp() {
@@ -237,6 +238,10 @@ public final class MineShop extends JavaPlugin {
             return "null";
         }
         return "error";
+    }
+
+    public static MineShop getPlugin() {
+        return plugin;
     }
 
     }

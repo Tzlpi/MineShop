@@ -3,6 +3,7 @@ package yad.mineshop.questsystem.gui;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Item;
 import org.bukkit.entity.Player;
@@ -10,6 +11,9 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataHolder;
+import org.bukkit.persistence.PersistentDataType;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.jetbrains.annotations.NotNull;
 import yad.mineshop.MineShop;
@@ -41,8 +45,12 @@ public class RewardGUI {
                 String playerName = mineShop.getNameFromUniqueId(kills);
 
                 ItemStack skull = new ItemBuilder(Material.PLAYER_HEAD).setSkullOwner(playerName).setName("Kill " + playerName)
-                        .setLore(ChatUtils.chat("&4&lRight Click me to kill the player!")).hideItemAttribute()
+                        .setLore(ChatUtils.chat("&4&lRight Click me to kill the player!")).hideItemAttribute().setPersistentDataContainer("uuid", kills)
                         .toItemStack();
+
+                PersistentDataContainer data = skull.getItemMeta().getPersistentDataContainer();
+
+                 data.set(new NamespacedKey(mineShop, "uuid"), PersistentDataType.STRING, "" + kills);
 
                 inv.addItem(skull);
         }

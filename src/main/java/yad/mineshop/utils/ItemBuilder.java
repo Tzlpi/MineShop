@@ -5,14 +5,19 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.SkullMeta;
+import org.bukkit.persistence.PersistentDataContainer;
+import org.bukkit.persistence.PersistentDataType;
+import yad.mineshop.MineShop;
 
 /**
  * Easily create itemstacks, without messing your hands.
@@ -75,6 +80,19 @@ public class ItemBuilder {
     public ItemBuilder setName(String name){
         ItemMeta im = is.getItemMeta();
         im.setDisplayName(name);
+        is.setItemMeta(im);
+        return this;
+    }
+
+    /**
+     * set persistent data container by tzipi.. not that great tho
+     * @param key the persistent data container key
+     * @param value the value in the data
+     */
+    public ItemBuilder setPersistentDataContainer(String key, String value) {
+        ItemMeta im = is.getItemMeta();
+        PersistentDataContainer data = im.getPersistentDataContainer();
+        data.set(new NamespacedKey(MineShop.getPlugin(), "" + key), PersistentDataType.STRING, "" + value);
         is.setItemMeta(im);
         return this;
     }

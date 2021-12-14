@@ -1,0 +1,10 @@
+name: MineShop
+version: '1.0-SNAPSHOT'
+main: yad.mineshop.MineShop
+api-version: 1.17
+authors: [ yad ]
+description: Later
+commands:
+  mineshop:
+    aliases: [ms]
+
