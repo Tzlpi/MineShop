@@ -50,6 +50,13 @@ public class InteractEvent implements Listener {
             UUID playerUUID = UUID.fromString(playerUUIDStr);
 
             Player target = Bukkit.getPlayer(playerUUID);
+
+            if(player == target) {
+                player.sendMessage(ChatUtils.chat(ChatUtils.prefix() + "&4You can't kill yourself!"));
+                player.playSound(player.getLocation(), Sound.ENTITY_ENDERMAN_TELEPORT, 1, 1);
+                return;
+            }
+
             if(Bukkit.getOnlinePlayers().contains(target)) {
 
                 player.getInventory().getItemInMainHand().add(-1);
