@@ -28,21 +28,19 @@ public class Runnable extends BukkitRunnable implements Listener {
             PersistentDataContainer data = player.getPersistentDataContainer();
             double current = 0;
 
-            if (data.has(new NamespacedKey(mineShop, "tempcoins"), PersistentDataType.DOUBLE))
-            {
+            if (data.has(new NamespacedKey(mineShop, "tempcoins"), PersistentDataType.DOUBLE)) {
                 current = data.get(new NamespacedKey(mineShop, "tempcoins"), PersistentDataType.DOUBLE);
             }
-            if (current != 0)
-            {
+            if (current != 0) {
+                
                 UUID uuid = player.getUniqueId();
-
-                try
-                {
+                
+                try {
                     mineShop.readStringFromURL(mineShop.addCoins(uuid, current));
                     data.set(new NamespacedKey(mineShop, "tempcoins"), PersistentDataType.DOUBLE, 0.0);
                 } catch (Exception ex)
                 {
-
+                    ex.printStackTrace();
                 }
             }
 
