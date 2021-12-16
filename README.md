@@ -33,7 +33,7 @@ The MineShop application allows you to "purchase" items with the coins you've ea
 
 Tzipi - me
 
-miuni - @miunidll
+miuni - @miuni_
 
 ### Special thanks
 
