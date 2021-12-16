@@ -89,7 +89,7 @@ public final class MineShop extends JavaPlugin {
                 return scanner.hasNext() ? scanner.next() : "";
             }
         } else {
-            return null;
+            return "null";
         }
     }
 
