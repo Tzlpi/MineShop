@@ -1,0 +1,8 @@
+.idea*
+.idea/discord.xml
+.idea/misc.xml
+.idea/workspace.xml
+target
+MineShop.iml
+
+src/main/resources/config.yml
