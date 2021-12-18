@@ -20,7 +20,7 @@ The MineShop application allows you to "purchase" items with the coins you've ea
 
 ## How to use
 
-1. Download the plugin and install it into your spigot / paper server (ve 1.17.1)
+1. Download the plugin and install it into your spigot / paper server (ver 1.17.1)
 2. Download the MineShop application
 3. Login to the server and register to the software using the <code>/register</code> command on the server
 4. Have Fun! :)
