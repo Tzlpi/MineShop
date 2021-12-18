@@ -16,11 +16,7 @@ The MineShop application allows you to "purchase" items with the coins you've ea
 - <code>/mineshop confirm</code> - Confirm that you actually want to stop the quest. Available aliases - <code>[con]</code>
 - <code>/mineshop claimrewards</code> - Opens a GUI where you can claim the rewards bought from the MineShop application. Available aliases - <code>[cr, rewards]</code>
 - <code>/mineshop help</code> - The help command. Available aliases - <code>[hp, help, hl]</code>
-
-- Bounty System - Still being implemented.
-
 - Buy menu - Buy items with earned coins in the MineShop app!
-
 
 ## How to use
 
@@ -29,11 +25,15 @@ The MineShop application allows you to "purchase" items with the coins you've ea
 3. Login to the server and register to the software using the <code>/register</code> command on the server
 4. Have Fun! :)
 
+
+## TODO
+- Bounty System - ❌	
+
 ## Authors
 
-Tzipi - me
+Tzipi - me (Java Plugin)
 
-miuni - <code>@miuni_</code>
+miuni - <code>@miuni_</code> (C# Software)
 
 ### Special thanks
 
