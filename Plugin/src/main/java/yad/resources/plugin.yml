@@ -1,0 +1,10 @@
+name: MineShop
+version: '${project.version}'
+main: yad.mineshop.MineShop
+api-version: 1.17
+authors: [ yad ]
+description: Later
+commands:
+  mineshop:
+    aliases: [ms]
+
