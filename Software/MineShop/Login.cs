@@ -47,7 +47,26 @@ namespace MineShop
             }
             string uuid = formatUUID(tempuuid);
             
-
+            try
+            {
+                using (WebClient webC = new WebClient())
+                {
+                    if (!webC.DownloadString(Constants.ipAddress() + @"api/ping").Contains("true"))
+                    {
+                        MessageBox.Show("Server is unreachable!\nPlease try again later.", "Mineshop", 
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Server is unreachable!\nPlease try again later.", "Mineshop",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
+            
             WebClient webClient = new WebClient();
             string res = webClient.DownloadString(Constants.ipAddress + $"api/main_data/isplayerregistered/{uuid}");
             if (res.Contains("false"))
